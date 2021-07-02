@@ -7,7 +7,7 @@ from django.urls import reverse
 from django.views.decorators.csrf import csrf_exempt
 
 
-from student_management_app.models import Member, CustomUser
+from accounts.models import Member, CustomUser
 
 
 def student_home(request):

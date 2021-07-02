@@ -10,9 +10,9 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
 
-from student_management_app.EmailBackEnd import EmailBackEnd
-from student_management_app.models import CustomUser
-from student_management_system import settings
+from accounts.EmailBackEnd import EmailBackEnd
+from accounts.models import CustomUser
+from config import settings
 
 # secret   6LeTfBYbAAAAAEAWPUEu_ANiR1mmXjhHc21uQZPj
 # site  6LeTfBYbAAAAAF4tBZTgcmMA3Gtp9kNFgejdEFDk
