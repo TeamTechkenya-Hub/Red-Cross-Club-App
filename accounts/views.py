@@ -49,3 +49,22 @@ def GetUserDetails(request):
 def logout_user(request):
     logout(request)
     return HttpResponseRedirect("/")
+
+def signup_member(request):
+    return render(request,"signup_member_page.html")
+
+def do_member_signup(request):
+    username=request.POST.get("username")
+    email=request.POST.get("email")
+    password=request.POST.get("password")
+    address=request.POST.get("address")
+
+    try:
+        user=CustomUser.objects.create_user(username=username,password=password,email=email,user_type=2)
+        user.staffs.address=address
+        user.save()
+        messages.success(request,"Successfully Created Member")
+        return HttpResponseRedirect(reverse("show_login"))
+    except:
+        messages.error(request,"Failed to Create Member")
+        return HttpResponseRedirect(reverse("show_login"))
