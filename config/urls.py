@@ -35,5 +35,11 @@ urlpatterns = [
     path('admin_home',AdminView.admin_home,name="admin_home"),
 
     path('signup_member',views.signup_member,name="signup_member"),
+
     path('do_member_signup',views.do_member_signup,name="do_member_signup"),
+
+
+
+    path('add_staff',HodViews.add_staff,name="add_staff"),
+    path('add_staff_save',HodViews.add_staff_save,name="add_staff_save"),
 ]
